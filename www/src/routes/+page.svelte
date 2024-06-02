@@ -2,7 +2,7 @@
 	import Card from '$lib/components/Card.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import quokka from '$lib/img/profile.jpg';
+	import quokka from '$lib/img/profile2.jpg';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';

@@ -8,7 +8,7 @@
 <div class="w-full">
 	<div class="mx-auto flex max-w-xs flex-col justify-center rounded-xl bg-white p-5 shadow-xl">
 		<div class="">
-			<img class="mx-auto w-32 rounded-full shadow-xl" src={img} alt="Profile face" />
+			<img class="mx-auto w-32 h-32 rounded-full shadow-xl" src={img} alt="Profile face" />
 		</div>
 		<div class="mt-5 text-center">
 			<h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">
