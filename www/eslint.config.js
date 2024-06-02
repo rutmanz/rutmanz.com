@@ -31,7 +31,9 @@ export default [
 	{
 		ignores: ['build/', '.svelte-kit/', 'dist/']
 	},
-	{ rules: {
-			"no-unused-vars": "warn",
-		}}
+	{
+		rules: {
+			'no-unused-vars': 'warn'
+		}
+	}
 ];

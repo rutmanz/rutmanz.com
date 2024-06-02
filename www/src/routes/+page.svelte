@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Card from '$lib/Card.svelte';
-	import Projects from '$lib/Projects.svelte';
-	import Skills from '$lib/Skills.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import Projects from '$lib/components/Projects.svelte';
+	import Skills from '$lib/components/Skills.svelte';
 	import quokka from '$lib/img/profile.jpg';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
@@ -9,7 +9,8 @@
 	onMount(() => {
 		AOS.init();
 	});
-	const { data } = $props();
+	import {interests, tools, languages} from "$lib/interests"
+	import {projects} from "$lib/projects"
 </script>
 
 {#snippet about()}
@@ -28,8 +29,12 @@
 	</div>
 	<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
 		{@render about()}
-		<h3 class="text-xl md:text-2xl font-bold text-center">Enthusiasms</h3>
-		<Skills skills={data.skills} />
-		<Projects projects={data.projects} />
+		<h3 class="text-xl md:text-2xl mt-8 font-bold text-center">Languages</h3>
+		<Skills skills={languages} color="red"/>
+		<h3 class="text-xl md:text-2xl mt-8 font-bold text-center">Tools</h3>
+		<Skills skills={tools} color="orange"/>
+		<h3 class="text-xl md:text-2xl mt-8 font-bold text-center">Enthusiasms</h3>
+		<Skills skills={interests} color="green"/>
+		<Projects {projects} />
 	</div>
 </div>
