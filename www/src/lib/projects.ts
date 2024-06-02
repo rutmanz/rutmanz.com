@@ -19,14 +19,5 @@ export const projects: Project[] = [
 			{ text: 'Slack Bot', url: 'https://github.com/flamingchickens1540/slack-time-bot' },
 			{ text: 'Backend', url: 'https://github.com/flamingchickens1540/CLUCK' }
 		]
-	},
-	{
-		title: 'FRC Team 1540 - Timesheet',
-		tags: ['Node.js', 'Typescript'],
-		description: 'Rebuilt a system for tracking team member hours using Slack, Google Sheets, and a custom web interface. Used Jest for unit testing and Node.js with Typescript for the backend',
-		links: [
-			{ text: 'Slack Bot', url: 'https://github.com/flamingchickens1540/slack-time-bot' },
-			{ text: 'Backend', url: 'https://github.com/flamingchickens1540/CLUCK' }
-		]
 	}
 ];
