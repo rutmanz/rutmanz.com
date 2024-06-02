@@ -9,7 +9,7 @@
 	onMount(() => {
 		AOS.init();
 	});
-  const {data} = $props()
+	const { data } = $props();
 </script>
 
 {#snippet about()}
@@ -28,8 +28,8 @@
 	</div>
 	<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
 		{@render about()}
-    <h3 class="text-xl md:text-2xl font-bold text-center">Enthusiasms</h3>
-    <Skills skills={data.skills}/>
-    <Projects projects={data.projects}/>
+		<h3 class="text-xl md:text-2xl font-bold text-center">Enthusiasms</h3>
+		<Skills skills={data.skills} />
+		<Projects projects={data.projects} />
 	</div>
 </div>

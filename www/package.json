@@ -39,8 +39,8 @@
 	},
 	"overrides": {
 		"@sveltejs/adapter-auto": {
-		  "svelte": "^5.0.0-next.1",
-		  "@sveltejs/kit": "^2.5.0"
+			"svelte": "^5.0.0-next.1",
+			"@sveltejs/kit": "^2.5.0"
 		},
 		"@fortawesome/svelte-fontawesome": {
 			"svelte": "^5.0.0-next.1"

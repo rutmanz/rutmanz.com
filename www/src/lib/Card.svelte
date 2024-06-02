@@ -1,8 +1,8 @@
 <script lang="ts">
 	const { img, name, title, github, email }: { img: string; name: string; title: string; github: string; email: string } = $props();
-    import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
-	import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <div class="w-full">
@@ -19,11 +19,11 @@
 			</p>
 			<div class="flex align-center justify-center mt-4">
 				<a class="text-xl leading-5 m-1 p-1 sm:m-2 sm:p-2 text-gray-800 hover:bg-gray-800 rounded-full hover:text-white transition-colors duration-300" href={github}>
-					 <FontAwesomeIcon icon={faGithub}/>
+					<FontAwesomeIcon icon={faGithub} />
 					<span class="sr-only">Github</span>
 				</a>
 				<a class="text-xl leading-5 m-1 p-1 sm:m-2 sm:p-2 text-gray-800 hover:bg-gray-800 rounded-full hover:text-white transition-colors duration-300" href={'https://mail.google.com/mail/?view=cm&fs=1&to=' + email}>
-					<FontAwesomeIcon icon={faEnvelope}  />
+					<FontAwesomeIcon icon={faEnvelope} />
 					<span class="sr-only">Email</span>
 				</a>
 			</div>
