@@ -43,6 +43,6 @@
 		<Skills skills={interests} color="green" />
 		<Projects {projects} />
 
-		<p class="text-md mt-10 text-center italic text-gray-500">More coming soon...</p>
+		<p class="text-md mt-10 text-center italic text-gray-700">More coming soon...</p>
 	</div>
 </div>
