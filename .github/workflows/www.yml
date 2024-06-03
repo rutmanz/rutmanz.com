@@ -28,7 +28,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           # Add this if you want to wait for a deployment triggered by a specfied commit
           commitHash: ${{ steps.push-changes.outputs.commit-hash }}
-      
+
   lighthouse:
     needs: deploy
     name: Lighthouse
@@ -37,11 +37,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          - node-version: ">=20.14.0"
-      - run: npm install -g @lhci/cli@0.13.x
-      - env:
-          
-      
+          node-version: ">=20.14.0"
+      - run: npm install -g @lhci/cli@0.13.x      
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
