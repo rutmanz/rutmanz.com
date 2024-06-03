@@ -7,14 +7,14 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		const disableLoadAnimation =  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true || navigator.userAgent.indexOf("Chrome-Lighthouse") > -1 || window.location.search.includes("nomotion");
+		const disableLoadAnimation = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true || navigator.userAgent.indexOf('Chrome-Lighthouse') > -1 || window.location.search.includes('nomotion');
 		if (!disableLoadAnimation) {
 			AOS.init();
 		} else {
-			for (const element of document.getElementsByClassName("fades")) {
-				(<HTMLElement>element).style.transform = "none";
-				(<HTMLElement>element).style.opacity = "1";
-				(<HTMLElement>element).style.transitionProperty = "none";
+			for (const element of document.getElementsByClassName('fades')) {
+				(<HTMLElement>element).style.transform = 'none';
+				(<HTMLElement>element).style.opacity = '1';
+				(<HTMLElement>element).style.transitionProperty = 'none';
 			}
 		}
 	});

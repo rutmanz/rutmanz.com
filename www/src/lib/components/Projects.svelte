@@ -4,14 +4,14 @@
 	type Link = { text: string; url: string; icon?: IconDefinition };
 	export type Project = { title: string; tags: Tag[]; description: string; links: Link[] };
 	const colors = {
-		"red": "bg-red-50 border-red-100",
-		"orange": "bg-orange-50 border-orange-100",
-		"yellow": "bg-yellow-50 border-yellow-100",
-		"green": "bg-green-50 border-green-100",
-		"blue": "bg-blue-50 border-blue-100",
-		"purple": "bg-purple-50 border-purple-100"
-	} as const
-	export type Tag = {text:string, color:keyof typeof colors}
+		red: 'bg-red-50 border-red-100',
+		orange: 'bg-orange-50 border-orange-100',
+		yellow: 'bg-yellow-50 border-yellow-100',
+		green: 'bg-green-50 border-green-100',
+		blue: 'bg-blue-50 border-blue-100',
+		purple: 'bg-purple-50 border-purple-100'
+	} as const;
+	export type Tag = { text: string; color: keyof typeof colors };
 </script>
 
 <script lang="ts">

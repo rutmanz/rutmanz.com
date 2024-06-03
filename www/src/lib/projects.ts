@@ -1,4 +1,5 @@
 import type { Project, Tag } from '$lib/components/Projects.svelte';
+import { faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
 
 const tags: Record<string, Tag> = {
 	java: { text: 'Java', color: 'red' },
@@ -30,10 +31,10 @@ export const projects: Project[] = [
 	{
 		title: 'Chrome Extensions',
 		tags: [tags.ts],
-		description: 'Rebuilt a system for tracking team member hours using Slack, Google Sheets, and a custom web interface. Used Jest for unit testing and Node.js with Typescript for the backend',
+		description: '',
 		links: [
-			{ text: 'Class Directories', url: 'https://github.com/flamingchickens1540/slack-time-bot' },
-			{ text: 'Backend', url: 'https://github.com/flamingchickens1540/CLUCK' }
+			{ text: 'Class Directories', url: '/redirect/veracrossclassdirectories', icon: faPuzzlePiece }
+			// { text: 'Backend', url: 'https://github.com/flamingchickens1540/CLUCK' }
 		]
 	}
 ];

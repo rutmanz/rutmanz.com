@@ -1,19 +1,19 @@
 <script lang="ts">
-	const { name, title, github, email }: {  name: string; title: string; github: string; email: string } = $props();
+	const { name, title, github, email }: { name: string; title: string; github: string; email: string } = $props();
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-	import quokka from "$lib/img/profile.webp"
-	import quokka_jpg from "$lib/img/profile.webp"
+	import quokka from '$lib/img/profile.webp';
+	import quokka_jpg from '$lib/img/profile.webp';
 </script>
 
 <div class="w-full">
 	<div class="mx-auto flex max-w-xs flex-col justify-center rounded-xl bg-white p-5 shadow-xl">
 		<picture>
-			<source type="image/webp" srcset={quokka}>
-			<source type="image/jpeg" srcset={quokka_jpg}>
-			<img class="mx-auto w-32 h-32 rounded-full shadow-xl" src={quokka_jpg} alt="profile">
+			<source type="image/webp" srcset={quokka} />
+			<source type="image/jpeg" srcset={quokka_jpg} />
+			<img class="mx-auto h-32 w-32 rounded-full shadow-xl" src={quokka_jpg} alt="profile" />
 		</picture>
 		<div class="mt-5 text-center">
 			<h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">
