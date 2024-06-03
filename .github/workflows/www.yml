@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Await CF Pages
         id: awaitcf
-        uses: WalshyDev/cf-pages-await@v1
+        uses: rutmanz/cf-pages-await@main
         with:
           # Uncomment these two lines if you wish to use the Global API Key (Not recommended!)
           # accountEmail: ${{ secrets.CF_ACCOUNT_EMAIL  }}
