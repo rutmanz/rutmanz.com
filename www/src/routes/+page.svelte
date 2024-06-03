@@ -32,7 +32,7 @@
 
 <div class="min-h-screen px-3 py-10 sm:px-5">
 	<div class="fades" data-aos="fade-down" data-aos-duration="800">
-		<Card img={quokka} name="First Last" title="Student" github="" email=""></Card>
+		<Card img={quokka} name="Zach Rutman" title="Student" github="https://github.com/rutmanz" email="me@rutmanz.com"></Card>
 	</div>
 	<div class="fades" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
 		{@render about()}
