@@ -2,7 +2,16 @@
 	import { type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 	type Link = { text: string; url: string; icon?: IconDefinition };
-	export type Project = { title: string; tags: string[]; description: string; links: Link[] };
+	export type Project = { title: string; tags: Tag[]; description: string; links: Link[] };
+	const colors = {
+		"red": "bg-red-50 border-red-100",
+		"orange": "bg-orange-50 border-orange-100",
+		"yellow": "bg-yellow-50 border-yellow-100",
+		"green": "bg-green-50 border-green-100",
+		"blue": "bg-blue-50 border-blue-100",
+		"purple": "bg-purple-50 border-purple-100"
+	} as const
+	export type Tag = {text:string, color:keyof typeof colors}
 </script>
 
 <script lang="ts">
@@ -22,7 +31,7 @@
 			<p class="text-center">{description}</p>
 			<div class="mb-8 mt-4 flex flex-wrap items-center justify-center gap-2">
 				{#each tags as tag}
-					<div class="rounded-full border-2 px-4 py-1">{tag}</div>
+					<div class="rounded-full border-2 px-4 py-1 {colors[tag.color]}">{tag.text}</div>
 				{/each}
 			</div>
 		</div>
