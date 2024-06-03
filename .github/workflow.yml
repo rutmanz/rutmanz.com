@@ -1,0 +1,50 @@
+name: Homepage
+on: [push, workflow_dispatch]
+jobs:
+  
+
+  deploy:
+    name: Wait for Deploy
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.awaitcf.outputs.url }}
+    # Allow GITHUB_TOKEN to write deployments for my action (https://docs.github.com/en/actions/security-guides/automatic-token-authentication)
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Await CF Pages
+        id: awaitcf
+        uses: WalshyDev/cf-pages-await@v1
+        with:
+          # Uncomment these two lines if you wish to use the Global API Key (Not recommended!)
+          # accountEmail: ${{ secrets.CF_ACCOUNT_EMAIL  }}
+          # apiKey: ${{ secrets.CF_API_KEY  }}
+          
+          # Use an API token (Recommended!)
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          
+          accountId: '56b813ed74b189d374513b24993c668a'
+          project: 'rutmanz-com'
+          # Add this if you want GitHub Deployments (see below)
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          # Add this if you want to wait for a deployment triggered by a specfied commit
+          commitHash: ${{ steps.push-changes.outputs.commit-hash }}
+      
+  lighthouse:
+    needs: deploy
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          - node-version: ">=20.14.0"
+      - run: npm install -g @lhci/cli@0.13.x
+      - env:
+          
+      
+      - run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          DEPLOY_URL: ${{needs.deploy.outputs.url}}
