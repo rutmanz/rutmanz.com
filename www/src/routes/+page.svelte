@@ -8,7 +8,16 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		AOS.init();
+		const disableLoadAnimation =  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true || navigator.userAgent.indexOf("Chrome-Lighthouse") > -1 || window.location.search.includes("nomotion");
+		if (!disableLoadAnimation) {
+			AOS.init();
+		} else {
+			for (const element of document.getElementsByClassName("fades")) {
+				(<HTMLElement>element).style.transform = "none";
+				(<HTMLElement>element).style.opacity = "1";
+				(<HTMLElement>element).style.transitionProperty = "none";
+			}
+		}
 	});
 	import { interests, tools, languages } from '$lib/interests';
 	import { projects } from '$lib/projects';
@@ -22,10 +31,10 @@
 {/snippet}
 
 <div class="min-h-screen px-3 py-10 sm:px-5">
-	<div data-aos="fade-down" data-aos-duration="800">
+	<div class="fades" data-aos="fade-down" data-aos-duration="800">
 		<Card img={quokka} name="First Last" title="Student" github="" email=""></Card>
 	</div>
-	<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+	<div class="fades" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
 		{@render about()}
 		<h3 class="mt-8 text-center text-xl font-bold md:text-2xl">Languages & Frameworks</h3>
 		<Skills skills={languages} color="red" />
