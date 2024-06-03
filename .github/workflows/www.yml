@@ -1,8 +1,6 @@
 name: Homepage
 on: [push, workflow_dispatch]
 jobs:
-  
-
   deploy:
     name: Wait for Deploy
     runs-on: ubuntu-latest
