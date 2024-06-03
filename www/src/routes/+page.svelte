@@ -2,7 +2,6 @@
 	import Card from '$lib/components/Card.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import quokka from '$lib/img/profile2.jpg';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
@@ -32,7 +31,7 @@
 
 <div class="min-h-screen px-3 py-10 sm:px-5">
 	<div class="fades" data-aos="fade-down" data-aos-duration="800">
-		<Card img={quokka} name="Zach Rutman" title="Student" github="https://github.com/rutmanz" email="me@rutmanz.com"></Card>
+		<Card name="Zach Rutman" title="Student" github="https://github.com/rutmanz" email="me@rutmanz.com"></Card>
 	</div>
 	<div class="fades" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
 		{@render about()}
