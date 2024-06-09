@@ -8,6 +8,7 @@
 		orange: 'bg-orange-50 border-orange-100',
 		yellow: 'bg-yellow-50 border-yellow-100',
 		green: 'bg-green-50 border-green-100',
+		cyan: 'bg-cyan-50 border-cyan-100',
 		blue: 'bg-blue-50 border-blue-100',
 		purple: 'bg-purple-50 border-purple-100'
 	} as const;
@@ -17,6 +18,7 @@
 <script lang="ts">
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import SvelteMarkdown from 'svelte-markdown';
 
 	const { projects }: { projects: Project[] } = $props();
 </script>
@@ -28,7 +30,7 @@
 				{title}
 			</h4>
 			<hr class="my-4" />
-			<p class="text-center">{description}</p>
+			<div class="flex justify-center items-center text-center"><SvelteMarkdown source={description}/></div>
 			<div class="mb-8 mt-4 flex flex-wrap items-center justify-center gap-2">
 				{#each tags as tag}
 					<div class="rounded-full border-2 px-4 py-1 {colors[tag.color]}">{tag.text}</div>
