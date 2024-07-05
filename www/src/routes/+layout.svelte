@@ -10,6 +10,8 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={desc} />
+	<meta name="og:title" content={title} />
+	<meta name="og:description" content={title} />
 	<link rel="canonical" href={`https://rutmanz.com${$page.url.pathname}`} />
 </svelte:head>
 
