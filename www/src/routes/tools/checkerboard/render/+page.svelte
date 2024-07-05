@@ -3,11 +3,16 @@
 	onMount(() => {
 		const params = new URLSearchParams(window.location.search)
 		const size = parseInt(params.get("s")!)
-		if (!isFinite(size)) {
+		if (!isFinite(size) || !params.has("a") || !params.has("b")) {
+			window.location.href ="./"
 			return
 		}
 		document.body.style.overscrollBehavior = "none"
 		const canvas = document.getElementById("canvas") as HTMLCanvasElement
+		window.addEventListener("resize", () => {
+			canvas.width = canvas.clientWidth
+			canvas.height = canvas.clientHeight
+		})
 		canvas.width = canvas.clientWidth
 		canvas.height = canvas.clientHeight
 		const ctx = canvas.getContext("2d")!

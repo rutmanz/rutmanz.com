@@ -8,7 +8,7 @@
 		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 			const data = new FormData(e.target as HTMLFormElement)
-			window.location.href=`/tools/checkerboard/render?s=${data.get("size")}&a=${processColor(data.get("colorA")! as string)}&b=${processColor(data.get("colorB")! as string)}`
+			window.location.href=`./checkerboard/render?s=${data.get("size")}&a=${processColor(data.get("colorA")! as string)}&b=${processColor(data.get("colorB")! as string)}`
 		});
 	});
 </script>
