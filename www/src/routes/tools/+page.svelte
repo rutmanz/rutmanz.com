@@ -17,4 +17,5 @@
 <div class="max-w-2xl mx-auto my-5 flex flex-col gap-5">
 {@render tool({ title: 'Checkerboard', url: '/tools/checkerboard', description: 'Generate a checkerboard with a specified pixel size to fill your screen' })}
 {@render tool({ title: 'Bounce', url: '/tools/bounce', description: 'DVD Bounce Game' })}
+	{@render tool({ title: 'RegEx', url: '/tools/regexboggle', description: 'Boggle with RegEx symbols' })}
 </div>
