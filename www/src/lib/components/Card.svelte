@@ -27,7 +27,7 @@
 					<FontAwesomeIcon icon={faGithub} />
 					<span class="sr-only">Github</span>
 				</a>
-				<a class="m-1 rounded-full p-1 text-xl leading-5 text-gray-800 transition-colors duration-300 hover:bg-gray-800 hover:text-white sm:m-2 sm:p-2" href={'https://mail.google.com/mail/?view=cm&fs=1&to=' + email}>
+				<a class="m-1 rounded-full p-1 text-xl leading-5 text-gray-800 transition-colors duration-300 hover:bg-gray-800 hover:text-white sm:m-2 sm:p-2" href={'mailto:' + email}>
 					<FontAwesomeIcon icon={faEnvelope} />
 					<span class="sr-only">Email</span>
 				</a>

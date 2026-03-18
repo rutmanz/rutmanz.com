@@ -2,6 +2,6 @@
 export async function load(e) {
 	return {
 		title: 'Zach Rutman',
-		desc: 'Welcome to my homepage'
+		desc: 'Search engines are good for the gut.'
 	};
 }
