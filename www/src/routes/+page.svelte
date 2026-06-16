@@ -34,7 +34,7 @@
 			<Card name="Zach Rutman" title="Student | Developer | Tinkerer" github="https://github.com/rutmanz" email="me@rutmanz.com"></Card>
 		</div>
 	<div class="padded"></div>
-	<p class="text-md mt-10 text-center italic text-gray-700">You made it!</p> 
+	<p class="text-md mt-10 text-center italic text-gray-700">You made it!<br>As a reward, you may ask me to tell you the story of John the Jeweler, John the Frequent Flier, or John the Florist</p> 
 	<!-- <div class="fades" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         {@render about()}
 		<h3 class="mt-8 text-center text-xl font-bold md:text-2xl">Languages & Frameworks</h3>
