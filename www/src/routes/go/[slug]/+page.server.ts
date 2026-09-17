@@ -1,6 +1,7 @@
 import { error, redirect } from '@sveltejs/kit';
 
 const pages: Record<string, string> = {
+	
 	veracrossclassdirectories: 'https://chromewebstore.google.com/detail/veracross-class-directori/cjllaifiobhpjcdlojfoaiabddlflime'
 };
 
