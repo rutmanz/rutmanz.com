@@ -2,7 +2,8 @@
 	import { faLink, type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 	type Link = { text: string; url: string; icon?: IconDefinition };
-	export type Project = { title: string; tags: Tag[]; description: string; links: Link[] };
+	type Image = { src:string, alt:string}
+	export type Project = { title: string; tags: Tag[]; description: string; links: Link[], images: Image[] };
 	const colors = {
 		red: 'bg-red-50 border-red-100',
 		orange: 'bg-orange-50 border-orange-100',
@@ -21,11 +22,18 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import SvelteMarkdown from 'svelte-markdown';
 	import { projects } from '$lib/projects';
+ 	 import { Carousel, Controls } from "flowbite-svelte";
+	import type { HTMLImgAttributes } from 'svelte/elements';
 </script>
 
-{#snippet projectCard({ title, tags, description, links }: Project)}
-	<div class="group mx-3 grid grid-cols-2 grid-cols-[4fr_1fr] divide-x-2 justify-between rounded-xl border-2 border-slate-300 transition-shadow duration-300 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-300/50 lg:m-0">
-		<div class="p-6">
+{#snippet projectCard({ title, tags, description, links, images }: Project)}
+	<div class="group mx-3 grid grid-auto-rows grid-cols-1 md:grid-cols-[2fr_4fr_9rem] divide-x-2 justify-between rounded-xl border-2 border-slate-300 transition-shadow duration-300 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-300/50 lg:m-0">
+	{#if images.length > 0}
+		<div class="max-w-full max-h-full min-h-48 rounded-t-xl md:rounded-none md:rounded-l-xl bg-center bg-clip-border bg-cover" style="background-image:url({images[0].src})">
+		<img class="sr-only" src={images[0].src} alt={images[0].alt}>
+		</div>
+	{/if}
+		<div class="p-6 {images.length == 0 ? "md:col-span-2" : ""}">
 			<h4 class="text-center text-xl font-bold">
 				{title}
 			</h4>
