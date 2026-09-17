@@ -1,3 +1,8 @@
+<script lang="ts" context="module">
+	declare global {
+		var __COMMIT_DATE__:string
+	}
+</script>
 <script lang="ts">
 	import Card from '$lib/components/ProfileCard.svelte';
 	import AOS from 'aos';
@@ -49,7 +54,8 @@
 		<p class="text-md mt-10 text-center italic text-gray-700">More coming soon...</p> -->
 	</div>
 	<div class="padded"></div>
-	<p class="text-md mt-10 text-center italic text-gray-700">You made it!<br>Ask me to tell you the story of John the Jeweler, John the Frequent Flier, or John the Florist</p> 
+	<p class="text-md mt-10 text-center italic text-gray-700">You made it!<br>Ask me to tell you the story of John the Jeweler, John the Frequent Flier, or John the Florist</p>
+	<p class="text-sm mt-10 text-center text-gray-600">Last Updated {__COMMIT_DATE__}</p> 
 </div>
 
 <style>
