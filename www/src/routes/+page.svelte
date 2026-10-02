@@ -21,8 +21,6 @@
 			}
 		}
 	});
-	import { interests, tools, languages } from '$lib/interests';
-	import { projects } from '$lib/projects';
 	import Projects from '$lib/components/Projects.svelte';
 </script>
 
@@ -30,7 +28,7 @@
 	<div class="mx-auto mt-16 max-w-4xl">
 		<h2 class="text-center text-2xl font-bold md:text-4xl">About Me</h2>
 		<p class="m-4 text-left text-base leading-relaxed text-gray-600 md:text-center">
-			I'm an undergraduate studying Computer Engineering and Materials Science. I love to build things with a purpose, tinker around, and learn new things. I'm currently reading <i>The Iliad</i>, and I recommend Sam Kean's <i>The Disappearing Spoon</i>. Feel free to contact me at the email above.
+			I'm an undergraduate studying Electrical Engineering and Materials Science, and I've spent a long time programming. I love to build things with a purpose, tinker around, and learn new things. I'm currently reading <i>The Iliad</i>, and I recommend Sam Kean's <i>The Disappearing Spoon</i>. Feel free to contact me at the email above.
 		</p>
 	</div>
 {/snippet}
@@ -43,15 +41,6 @@
 	<div class="fades" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         {@render about()}
 		<Projects/>
-		<!-- <h3 class="mt-8 text-center text-xl font-bold md:text-2xl">Languages & Frameworks</h3>
-		<Skills skills={languages} color="red" />
-		<h3 class="mt-8 text-center text-xl font-bold md:text-2xl">Tools</h3>
-		<Skills skills={tools} color="orange" />
-		<h3 class="mt-8 text-center text-xl font-bold md:text-2xl">Enthusiasms</h3>
-		<Skills skills={interests} color="green" />
-		<Projects {projects} />
-
-		<p class="text-md mt-10 text-center italic text-gray-700">More coming soon...</p> -->
 	</div>
 	<div class="padded"></div>
 	<p class="text-md mt-10 text-center italic text-gray-700">You made it!<br>Ask me to tell you the story of John the Jeweler, John the Frequent Flier, or John the Florist</p>

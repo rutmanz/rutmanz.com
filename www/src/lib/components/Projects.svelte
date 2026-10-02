@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { faLink, type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-	type Link = { text: string; url: string; icon?: IconDefinition };
+	type Link = { text: string; url: string; icon?: IconDefinition, disabled?:boolean };
 	type Image = { src:string, alt:string}
 	export type Project = { title: string; tags: Tag[]; description: string; links: Link[], images: Image[] };
 	const colors = {
@@ -46,10 +46,17 @@
 		<div class="py-6 px-3 mr-3">
 			<div class="flex w-full flex-col items-center justify-center gap-2 ml-2 text-center">
 				{#each links as link}
-					<a target="_blank" href={link.url} class="rounded-lg w-full flex flex-row justify-center items-center gap-2 rounded-lg border-2 border-slate-400 px-4 py-1 align-middle transition-colors duration-300 hover:border-purple-500 hover:bg-purple-200 ">
+					{#if link.disabled} 
+					<button disabled title={"Coming Soon"} class="rounded-lg w-full flex flex-row justify-center items-center gap-2 rounded-lg border-2  px-4 py-1 align-middle transition-colors duration-300 cursor-not-allowed text-gray-500 border-gray-300">
+							<span>{link.text}</span>
+							<FontAwesomeIcon icon={link.icon ?? faLink} />
+					</button>
+			{:else}
+					<a target="_blank" href={link.url} class="rounded-lg w-full flex flex-row justify-center items-center gap-2 rounded-lg border-2 border-slate-400 px-4 py-1 align-middle transition-colors duration-300 hover:border-purple-500 hover:bg-purple-200">
 							<span>{link.text}</span>
 							<FontAwesomeIcon icon={link.icon ?? faLink} />
 					</a>
+					{/if}
 				{/each}
 			</div>
 		</div>
