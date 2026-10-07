@@ -70,7 +70,7 @@ export const projects: Project[] = [
 		tags: [tags.node, tags.ts],
 		description: 'Rebuilt a system for tracking team member hours using Slack, Google Sheets, and a custom web interface. Used Jest for unit testing and Node.js with Typescript for the backend',
 		links: [
-			{ text: 'Github', url: 'https://github.com/flamingchickens1540/CLUCK', icon: faGithub }
+			{ text: 'GitHub', url: 'https://github.com/flamingchickens1540/CLUCK', icon: faGithub }
 		],
 		images: [{ src: "https://github.com/user-attachments/assets/1cbaee67-7ab1-4e45-9774-339cd8300b24", alt: "Screenshot of synced spreadsheet" }]
 	},
